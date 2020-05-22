@@ -139,10 +139,10 @@
 		97B4489C210FBC2C0004B056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97B4489A210FBC2C0004B056 /* Main.storyboard */; };
 		97B4489E210FBC2E0004B056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97B4489D210FBC2E0004B056 /* Assets.xcassets */; };
 		97B448A1210FBC2E0004B056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97B4489F210FBC2E0004B056 /* LaunchScreen.storyboard */; };
-		97B4ADF92392BA3C00264AF6 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B4ADF82392BA3C00264AF6 /* MapController.swift */; };
 		97B4ADFB239C6C3800264AF6 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B4ADFA239C6C3800264AF6 /* TabsController.swift */; };
 		97B794201F4E23F300F3EBE8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B7941F1F4E23F300F3EBE8 /* WelcomeView.swift */; };
 		97BAA542202B4C5E00500644 /* SettingBackupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAA541202B4C5E00500644 /* SettingBackupController.swift */; };
+		97BB5D0C24775DB700786D1C /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB5D0B24775DB700786D1C /* MapController.swift */; };
 		97C575F4202CB0E800E37502 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C575F3202CB0E800E37502 /* NotificationCenter.framework */; };
 		97C575F7202CB0E800E37502 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C575F6202CB0E800E37502 /* TodayViewController.swift */; };
 		97C575FA202CB0E800E37502 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C575F8202CB0E800E37502 /* MainInterface.storyboard */; };
@@ -658,6 +658,7 @@
 		97B4ADFA239C6C3800264AF6 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
 		97B7941F1F4E23F300F3EBE8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		97BAA541202B4C5E00500644 /* SettingBackupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBackupController.swift; sourceTree = "<group>"; };
+		97BB5D0B24775DB700786D1C /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		97C575F2202CB0E800E37502 /* Bookmarks.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Bookmarks.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C575F3202CB0E800E37502 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		97C575F6202CB0E800E37502 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -896,6 +897,7 @@
 				97A04DFC23CBBA84006DE063 /* RootController.swift */,
 				97EF586C239DB83E007549B8 /* ContentController.swift */,
 				97B4ADFA239C6C3800264AF6 /* TabsController.swift */,
+				97BB5D0B24775DB700786D1C /* MapController.swift */,
 				97D757E3238F29DC008FB7E2 /* SideBar */,
 				97050CFF1F6730010021DE78 /* Web */,
 				972E6F651FA2872A00F5C927 /* Search */,
@@ -1861,7 +1863,6 @@
 				97CA4A7220A21D24008CEA6D /* LibraryLanguageController.swift in Sources */,
 				979D6E0C20B34FD700B08DE7 /* BookmarkController.swift in Sources */,
 				97A04DFD23CBBA84006DE063 /* RootController.swift in Sources */,
-				97B4ADF92392BA3C00264AF6 /* MapController.swift in Sources */,
 				973B8012239066D0008CC8CE /* SceneDelegate.swift in Sources */,
 				97DBCF9D203CA254004EE274 /* SettingExternalLinkController.swift in Sources */,
 				97028C4F20192F65001259CB /* OutlineController.swift in Sources */,
@@ -1874,6 +1875,7 @@
 				9779A5B82456793600F6F6FF /* LibraryOperationBase.swift in Sources */,
 				9779A5B62456793600F6F6FF /* LibraryScanOperation.swift in Sources */,
 				9779A5C62456793600F6F6FF /* ZimFileMetaData.mm in Sources */,
+				97BB5D0C24775DB700786D1C /* MapController.swift in Sources */,
 				97BAA542202B4C5E00500644 /* SettingBackupController.swift in Sources */,
 				9779A7E424567A5A00F6F6FF /* Log.swift in Sources */,
 				970EC3A123BCEC84008DCA27 /* Parser.swift in Sources */,
