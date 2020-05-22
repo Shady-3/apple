@@ -17,6 +17,7 @@ class ContentController: UIViewController, UISearchControllerDelegate, WebViewCo
     private let outlineButton = Button(imageName: "list.bullet")
     private let bookmarkButton = BookmarkButton(imageName: "star", bookmarkedImageName: "star.fill")
     private let bookmarkToggleButton = BookmarkButton(imageName: "star.circle.fill", bookmarkedImageName: "star.circle")
+    private let mapButton = Button(imageName: "map")
     private let libraryButton = Button(imageName: "folder")
     private let settingButton = Button(imageName: "gear")
     private let bookmarkLongPressGestureRecognizer = UILongPressGestureRecognizer()
@@ -45,6 +46,7 @@ class ContentController: UIViewController, UISearchControllerDelegate, WebViewCo
         outlineButton.addTarget(self, action: #selector(openOutline), for: .touchUpInside)
         bookmarkButton.addTarget(self, action: #selector(openBookmark), for: .touchUpInside)
         bookmarkToggleButton.addTarget(self, action: #selector(toggleBookmark), for: .touchUpInside)
+        mapButton.addTarget(self, action: #selector(openMap), for: .touchUpInside)
         libraryButton.addTarget(self, action: #selector(openLibrary), for: .touchUpInside)
         settingButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
         
@@ -101,16 +103,32 @@ class ContentController: UIViewController, UISearchControllerDelegate, WebViewCo
     func configureToolbar(isGrouped: Bool) {
         if isGrouped {
             let left = ButtonGroupView(buttons: [sideBarButton, chevronLeftButton, chevronRightButton], spacing: 10)
-            let right = ButtonGroupView(buttons: [bookmarkToggleButton, libraryButton, settingButton], spacing: 10)
+            let right = ButtonGroupView(buttons: {
+                if #available(iOS 13.0, *) {
+                    return [bookmarkToggleButton, mapButton, libraryButton, settingButton]
+                } else {
+                    return [bookmarkToggleButton, libraryButton, settingButton]
+                }
+            }(), spacing: 10)
             toolbarItems = [
                 UIBarButtonItem(customView: left),
                 UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
                 UIBarButtonItem(customView: right),
             ]
         } else {
-            let group = ButtonGroupView(buttons: [
-                chevronLeftButton, chevronRightButton, outlineButton, bookmarkButton, libraryButton, settingButton,
-            ])
+            let group = ButtonGroupView(buttons: {
+                if #available(iOS 13.0, *) {
+                    return [
+                        chevronLeftButton, chevronRightButton, outlineButton,
+                        bookmarkButton, mapButton, libraryButton, settingButton,
+                    ]
+                } else {
+                    return [
+                        chevronLeftButton, chevronRightButton, outlineButton,
+                        bookmarkButton, libraryButton, settingButton,
+                    ]
+                }
+            }())
             toolbarItems = [UIBarButtonItem(customView: group)]
         }
     }
@@ -348,6 +366,12 @@ class ContentController: UIViewController, UISearchControllerDelegate, WebViewCo
                 })
             }
         } catch {return}
+    }
+    
+    @objc func openMap() {
+        if #available(iOS 13.0, *) {
+            splitViewController?.present(MapController(), animated: true)
+        }
     }
     
     @objc func openLibrary() {
